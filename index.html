@@ -32,7 +32,6 @@
 
   <script>
     (function () {
-      // 建立一顆隱藏按鈕（畫面上完全看不到，也不能 Tab 到）
       const hiddenButton = document.createElement("button");
       hiddenButton.id = "dev-only-btn";
       hiddenButton.textContent = "you will not see this";
@@ -41,7 +40,6 @@
 
       async function onHiddenClick() {
         try {
-          // 這個檔案裡才有 flag，本檔案完全沒有
           const res = await fetch("secret_4f9c27d3.txt", { cache: "no-store" });
           if (!res.ok) {
             console.log("No reward for you.");
@@ -57,7 +55,6 @@
 
       hiddenButton.addEventListener("click", onHiddenClick);
 
-      // 給會看 console 的人一點提示
       console.log("There is nothing to click here...");
       console.log("But maybe you can click something from the console:");
       console.log('  document.querySelector("#dev-only-btn").click()');
@@ -65,3 +62,4 @@
   </script>
 </body>
 </html>
+
